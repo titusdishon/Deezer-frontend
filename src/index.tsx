@@ -5,22 +5,22 @@ import { Provider } from "react-redux";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import configureStore from "./store/configureStore";
+import { PersistGate } from 'redux-persist/integration/react';
 
-const { store } = configureStore();
+const { store, persistor } = configureStore();
 const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
     <QueryClientProvider client={queryClient}>
+      <PersistGate persistor={persistor}>
       <App />
+      </PersistGate>
       </QueryClientProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

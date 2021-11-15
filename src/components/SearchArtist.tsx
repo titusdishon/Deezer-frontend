@@ -44,6 +44,7 @@ const SearchArtist: React.FC<Props> = ({ open, toggleOpen }: Props) => {
         toggleOpen();
     }, 200);
   };
+  console.log(data);
   if (redirect) {
     return <Redirect to="/artist" />;
   }
@@ -96,6 +97,7 @@ const SearchArtist: React.FC<Props> = ({ open, toggleOpen }: Props) => {
                     onArtistSelect(artist);
                  
                   }}
+                  key={artist.id}
                 >
                   <ListItemAvatar>
                     <Avatar alt="Remy Sharp" src={artist?.picture_small} />

@@ -9,10 +9,10 @@ const RootStore = () => {
   const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['auth', 'catalogue', 'replenishment', 'orderSale', 'newOrder'],
+    whitelist: ['music'],
     transforms: [
       encryptTransform({
-        secretKey: `the-${process.env.REACT_APP_SECRET_KEY}`,
+        secretKey: `deezer`,
         onError: (err: any) => {
           // eslint-disable-next-line no-console
           console.log('ENC_ERR', err);

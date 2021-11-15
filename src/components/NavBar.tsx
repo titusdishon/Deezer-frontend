@@ -39,7 +39,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -56,7 +55,7 @@ export default function NavBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1,  }}>
+    <Box sx={{ flexGrow: 1, width:{xs:'100%', lg:'80%',md:'80%'}, margin:' auto'  }}>
       <AppBar position="static" sx={{padding:1}}>
         <Toolbar>
           <Link to="/" style={{textDecoration:'none', color:'#ffffff', fontWeight:'bold'}}>
@@ -64,7 +63,7 @@ export default function NavBar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, textDecoration: 'none' }}
+            sx={{ display: { xs: 'block', sm: 'block' }, textDecoration: 'none', marginRight: 1 }}
           >
             DEEZER
           </Typography></Link>

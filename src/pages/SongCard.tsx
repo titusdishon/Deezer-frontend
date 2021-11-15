@@ -18,7 +18,7 @@ const SongCard: React.FC<Props> = ({ song }: Props) => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, marginTop: 1, marginLeft: 1 }}>
+    <Box sx={{ marginTop: 1  }}>
       <Grid
         container
         sx={{
@@ -26,16 +26,16 @@ const SongCard: React.FC<Props> = ({ song }: Props) => {
           flexGrow: 1,
           marginTop: 1,
           padding: 2,
-          marginLeft: 1,
+          borderRadius:5,
         }}
       >
-        <Grid xs={12} sm={12} md={6} lg={6}>
+        <Grid xs={12} sm={12} md={6} lg={6} item>
           <Avatar
             src={song.album.cover_big}
             sx={{ width: 200, height: 200, margin: "auto" }}
           />
         </Grid>
-        <Grid xs={12} sm={12} md={6} lg={6} sx={{ alignContent: "center" }}>
+        <Grid xs={12} sm={12} md={6} lg={6} sx={{ alignContent: "center" }} item>
           <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
             <List
               sx={{
