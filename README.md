@@ -1,47 +1,131 @@
-# Getting Started with Create React App
+# Deezer Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo holds the codebase for the Deezer Frontend.
 
-## Available Scripts
+### Project Structure
 
-In the project directory, you can run:
+```
+├── README.md
+├── node_modules [1102 entries exceeds filelimit, not opening dir]
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── setupTests.ts
+├── src
+│   ├── App.tsx
+│   ├── components
+│   │   ├── LoadingSpinner.tsx
+│   │   ├── Music.tsx
+│   │   ├── NavBar.tsx
+│   │   ├── Pagination.tsx
+│   │   ├── SearchArtist.tsx
+│   │   └── Videos.test.tsx
+│   ├── index.tsx
+│   ├── pages
+│   │   ├── ArtistView.tsx
+│   │   ├── PlayListView.tsx
+│   │   ├── SongCard.tsx
+│   │   ├── SongPreview.tsx
+│   │   ├── TrackCard.tsx
+│   │   └── Tracks.tsx
+│   ├── react-app-env.d.ts
+│   ├── reportWebVitals.ts
+│   ├── setupTests.ts
+│   ├── store
+│   │   ├── configureStore.ts
+│   │   ├── musicSlice.ts
+│   │   └── rootReducer.ts
+│   ├── theme
+│   │   ├── Screenshot\ 2021-11-15\ at\ 22.13.23.png
+│   │   ├── ThemeProvider.tsx
+│   │   ├── base.ts
+│   │   └── schemes
+│   │       └── PureLightTheme.ts
+│   └── utils
+│       ├── Constants.ts
+│       ├── ValidateInput.ts
+│       ├── api.ts
+│       ├── config.ts
+│       ├── fetch.ts
+│       └── useGracefulAPIErrorHandling.ts
+└── tsconfig.json
 
-### `yarn start`
+9 directories, 41 files
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Techstack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Typescript
+2. Redux
+3. Material Ui
+4. React Testing Library
+5. React query 
 
-### `yarn test`
+#### Local set up
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repo, then run the following commands in order in your Terminal
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cd Deezer-frontend
+git checkout <branch-of-interest>
+npm install
+npm run test # to run test coverage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+Then run:
+```
+npm start # makes the app available on localhost, port 3001 by default
 
-### `yarn eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Navigate to [http://localhost:3001/](http://localhost:3001/) on  your browser and you should see the application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Home layout
+![Tests](https://github.com/titusdishon/Deezer-frontend/blob/main/home.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Other screens
+- Search
+![Tests](https://github.com/titusdishon/Deezer-frontend/blob/main/search.png)
+- Playlist details
+![Tests](https://github.com/titusdishon/Deezer-frontend/blob/main/p-details.png)
+- Artist Details
+![Tests](https://github.com/titusdishon/Deezer-frontend/blob/main/artist-details.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Song preview
+![Tests](https://github.com/titusdishon/Deezer-frontend/blob/main/preview.png)
 
-## Learn More
+#### Submit a Pull Request
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+How to:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# Deezer-frontend
+1. In Terminal, do this in the root directory of the project
+
+```bash
+git checkout -b feature/short-description 
+```
+
+##### Branch naming convention\*
+
+Preface you branch name with
+
+- `feature` for branches that introduce new functionality
+- `chore` for branches that perform a useful general improvement, not tied to any specific functionality
+- `fix` for branches that fix broken functionality
+- `tests` for branches that only add developer tests
+
+2. Raise a PR on GitHub, making sure to follow the inbuilt PR template.
+
+3. Your changes will be merged into `main` on condition that:
+
+- they do not break existing functionality
+- they do not lower test coverage (unreasonably)
+### sample test coverage
+![Tests](https://github.com/titusdishon/Deezer-frontend/blob/main/tests.png)

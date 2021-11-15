@@ -1,27 +1,33 @@
-import { Action, configureStore } from '@reduxjs/toolkit';
-import { persistReducer, persistStore } from 'redux-persist';
-import { encryptTransform } from 'redux-persist-transform-encrypt';
-import storage from 'redux-persist/lib/storage/session';
-import { ThunkAction } from 'redux-thunk';
-import rootReducer from './rootReducer';
+import { Action, configureStore } from "@reduxjs/toolkit";
+import { persistReducer, persistStore } from "redux-persist";
+import { encryptTransform } from "redux-persist-transform-encrypt";
+import storage from "redux-persist/lib/storage/session";
+import { ThunkAction } from "redux-thunk";
+import rootReducer from "./rootReducer";
 
 const RootStore = () => {
   const persistConfig = {
-    key: 'root',
+    key: "root",
     storage,
-    whitelist: ['music'],
+    whitelist: ["music"],
     transforms: [
       encryptTransform({
-        secretKey: `deezer`,
+        secretKey: "deezer-frontend-secret-key",
         onError: (err: any) => {
           // eslint-disable-next-line no-console
-          console.log('ENC_ERR', err);
+          console.log("ENC_ERR", err);
         },
       }),
     ],
   };
   const persistedReducer = persistReducer(persistConfig, rootReducer);
-  const store = configureStore({ reducer: persistedReducer });
+  const store = configureStore({
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: false,
+      }),
+  });
   const persistor = persistStore(store);
   return { store, persistor };
 };

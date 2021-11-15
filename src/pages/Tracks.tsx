@@ -37,7 +37,7 @@ export default function Tracks() {
     });
   };
   return (
-    <>
+    <div>
       <Box sx={{ flexGrow: 1, marginTop: 1, width:'80%', margin:'auto' }}>
         {isError && (
           <Alert className="error-container" severity="error">
@@ -79,6 +79,6 @@ export default function Tracks() {
         count={10}
         page={parseInt(index, 10)}
       />
-    </>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React,{ useState } from "react";
 import Dialog from "@mui/material/Dialog";
 import Card from "@mui/material/Card";
 import useFetch from "../utils/fetch";
@@ -13,8 +13,8 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
-  Typography,
   Skeleton,
+  Alert,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { setArtist } from "../store/musicSlice";
@@ -26,8 +26,8 @@ type Props = {
 };
 
 const SearchArtist: React.FC<Props> = ({ open, toggleOpen }: Props) => {
-  const [query, setQuery] = React.useState<string>("");
-  const [redirect, setRedirect] = React.useState<boolean>(false);
+  const [query, setQuery] = useState<string>("");
+  const [redirect, setRedirect] = useState<boolean>(false);
   const dispatch = useDispatch();
 
   const { data, isSuccess, isLoading } = useFetch(
@@ -44,14 +44,14 @@ const SearchArtist: React.FC<Props> = ({ open, toggleOpen }: Props) => {
         toggleOpen();
     }, 200);
   };
-  console.log(data);
+
   if (redirect) {
     return <Redirect to="/artist" />;
   }
 
   return (
-    <div>
       <Dialog
+       role="search-box"
         open={open}
         onClose={toggleOpen}
         aria-labelledby="alert-dialog-title"
@@ -72,9 +72,10 @@ const SearchArtist: React.FC<Props> = ({ open, toggleOpen }: Props) => {
           >
             <InputBase
               sx={{ ml: 1, flex: 1 }}
+              value={query || ""}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search artist name"
-              inputProps={{ "aria-label": "search artist name" }}
+              inputProps={{ "aria-label": "search artist name", "data-testid": "search-artist-input" }}
             />
             <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
               <SearchIcon />
@@ -106,12 +107,6 @@ const SearchArtist: React.FC<Props> = ({ open, toggleOpen }: Props) => {
                     primary={artist.name}
                     secondary={
                       <React.Fragment>
-                        <Typography
-                          sx={{ display: "inline" }}
-                          component="span"
-                          variant="body2"
-                          color="text.primary"
-                        ></Typography>
                         {artist.nb_fan} fans
                       </React.Fragment>
                     }
@@ -120,20 +115,25 @@ const SearchArtist: React.FC<Props> = ({ open, toggleOpen }: Props) => {
               ))}
             </List>
           )}
-          <List>
-            {isLoading &&
+          {isLoading&&<List>
+            {
               [1, 2, 3, 4, 5].map((i) => (
-                <ListItem alignItems="flex-start" sx={{ padding: "2px" }}>
+                <ListItem alignItems="flex-start" sx={{ padding: "2px" }}  key={i}>
                   <Skeleton
                     animation="wave"
                     sx={{ width: "100%", padding: "25px" }}
                   />
                 </ListItem>
               ))}
+          </List>}
+          <List>
+            {data?.data?.length === 0 && (
+              <ListItem  >
+               <Alert sx={{ padding: "2px", width:'100%' }} severity="warning">No record found</Alert>
+            </ListItem>)}
           </List>
         </Card>
       </Dialog>
-    </div>
   );
 };
 export default SearchArtist;

@@ -55,19 +55,20 @@ export default function NavBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, width:{xs:'100%', lg:'80%',md:'80%'}, margin:' auto'  }}>
+    <Box sx={{ flexGrow: 1 }} role="navbar">
       <AppBar position="static" sx={{padding:1}}>
-        <Toolbar>
-          <Link to="/" style={{textDecoration:'none', color:'#ffffff', fontWeight:'bold'}}>
+        <Toolbar sx={{width:{xs:'100%', lg:'80%',md:'80%'}, margin:' auto' }}>
+          <Link to="/" style={{textDecoration:'none', color:'#ffffff', fontWeight:'bold'}} role="home-link">
           <Typography
             variant="h6"
             noWrap
             component="div"
+            role="app-title"
             sx={{ display: { xs: 'block', sm: 'block' }, textDecoration: 'none', marginRight: 1 }}
           >
             DEEZER
           </Typography></Link>
-          <Search onClick={toggleOpen}>
+          <Search onClick={toggleOpen} data-testid='search'>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
