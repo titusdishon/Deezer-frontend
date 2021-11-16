@@ -4,16 +4,16 @@
     "main.js.map": "/Deezer-frontend/static/js/main.cb45678e.chunk.js.map",
     "runtime-main.js": "/Deezer-frontend/static/js/runtime-main.fcca5bb8.js",
     "runtime-main.js.map": "/Deezer-frontend/static/js/runtime-main.fcca5bb8.js.map",
-    "static/js/2.391ebb0c.chunk.js": "/Deezer-frontend/static/js/2.391ebb0c.chunk.js",
-    "static/js/2.391ebb0c.chunk.js.map": "/Deezer-frontend/static/js/2.391ebb0c.chunk.js.map",
+    "static/js/2.92a51907.chunk.js": "/Deezer-frontend/static/js/2.92a51907.chunk.js",
+    "static/js/2.92a51907.chunk.js.map": "/Deezer-frontend/static/js/2.92a51907.chunk.js.map",
     "static/js/3.9812cd99.chunk.js": "/Deezer-frontend/static/js/3.9812cd99.chunk.js",
     "static/js/3.9812cd99.chunk.js.map": "/Deezer-frontend/static/js/3.9812cd99.chunk.js.map",
     "index.html": "/Deezer-frontend/index.html",
-    "static/js/2.391ebb0c.chunk.js.LICENSE.txt": "/Deezer-frontend/static/js/2.391ebb0c.chunk.js.LICENSE.txt"
+    "static/js/2.92a51907.chunk.js.LICENSE.txt": "/Deezer-frontend/static/js/2.92a51907.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fcca5bb8.js",
-    "static/js/2.391ebb0c.chunk.js",
+    "static/js/2.92a51907.chunk.js",
     "static/js/main.cb45678e.chunk.js"
   ]
 }
