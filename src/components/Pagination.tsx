@@ -13,7 +13,7 @@ export const PaginationOutlined:React.FC<Props>=({setValue,count, page}:Props)=>
       };
   return (
     <Stack spacing={2} sx={{width:'400px', justifyContent:'center', margin:'20px auto 30px auto', backgroundColor:' #ffffff', padding:'10px'}}>
-      <Pagination  page={page} count={count} variant="outlined" color="primary" onChange={handleChange}  />
+      <Pagination  page={page} count={count} variant="outlined" color="primary" onChange={handleChange} sx={{  marginLeft:'20px'}} />
     </Stack>
   );
 }
