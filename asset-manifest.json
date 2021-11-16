@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Deezer-frontend/static/js/main.b794e39f.chunk.js",
-    "main.js.map": "/Deezer-frontend/static/js/main.b794e39f.chunk.js.map",
+    "main.js": "/Deezer-frontend/static/js/main.5ecb4bf4.chunk.js",
+    "main.js.map": "/Deezer-frontend/static/js/main.5ecb4bf4.chunk.js.map",
     "runtime-main.js": "/Deezer-frontend/static/js/runtime-main.fcca5bb8.js",
     "runtime-main.js.map": "/Deezer-frontend/static/js/runtime-main.fcca5bb8.js.map",
     "static/js/2.391ebb0c.chunk.js": "/Deezer-frontend/static/js/2.391ebb0c.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.fcca5bb8.js",
     "static/js/2.391ebb0c.chunk.js",
-    "static/js/main.b794e39f.chunk.js"
+    "static/js/main.5ecb4bf4.chunk.js"
   ]
 }
