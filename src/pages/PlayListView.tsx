@@ -46,7 +46,7 @@ export default function PlayListView() {
           </Alert>
         )}
       <Avatar sx={{ width: "35%", margin: "50px auto", height: "auto" }} src={data.picture_big} />
-      <Box sx={{ width: "80%", margin: "auto" }} >
+      <Box >
         <Typography
           variant="h1"
           sx={{ width: "100%", textAlign: "center", padding: 3 }}
@@ -56,7 +56,7 @@ export default function PlayListView() {
         <Grid container spacing={1} >
           {isSuccess &&
             data.tracks.data.map((song: any, index: number) => (
-              <Grid item xs={12} sm={12} md={4} lg={3} key={index}>
+              <Grid item xs={12} sm={12} md={6} lg={4} key={index}>
                 <SongCard song={song} />
               </Grid>
             ))}

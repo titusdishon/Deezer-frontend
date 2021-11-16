@@ -40,7 +40,7 @@ export default function ArtistView() {
         <Grid container spacing={{ xs: 1, sm: 1, md: 3 }}>
           {isSuccess &&
             data.data.map((song: any, index: number) => (
-              <Grid item xs={12} sm={12} md={4} lg={3} key={index}>
+              <Grid item  xs={12} sm={12} md={6} lg={4} key={index}>
                 <SongCard song={song} />
               </Grid>
             ))}

@@ -1,5 +1,5 @@
 import { AxiosError } from 'axios';
-import { useHistory, useLocation } from 'react-router-dom';
+import {  useLocation, useNavigate } from 'react-router-dom';
 
 /**
  * @description Intercept API errors and redirect to auth if
@@ -11,7 +11,7 @@ export const useRedirectOnUnauthorised = (
   path: string,
   onFailure?: Function,
 ) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   if (
     !path.includes('auth/get-my-detail-after-login') &&
@@ -22,7 +22,8 @@ export const useRedirectOnUnauthorised = (
       pathname: '/',
       state: { from: location },
     };
-    history.push(newLocation);
+    
+    navigate(newLocation)
     return;
   }
   if (error && (error as AxiosError)?.response?.status === 403) {
@@ -30,7 +31,7 @@ export const useRedirectOnUnauthorised = (
       pathname: '/access-denied',
       state: { from: location },
     };
-    history.push(newLocation);
+    navigate(newLocation)
     return;
   }
   onFailure &&
