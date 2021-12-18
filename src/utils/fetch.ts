@@ -60,7 +60,6 @@ export default function useFetch(
     },
   );
 
-  // useRedirectOnUnauthorised(error, path);
   return {
     isLoading,
     isRefreshing,

@@ -49,11 +49,9 @@ This repo holds the codebase for the Deezer Frontend.
 │   │       └── PureLightTheme.ts
 │   └── utils
 │       ├── Constants.ts
-│       ├── ValidateInput.ts
 │       ├── api.ts
 │       ├── config.ts
 │       ├── fetch.ts
-│       └── useGracefulAPIErrorHandling.ts
 └── tsconfig.json
 
 9 directories, 41 files

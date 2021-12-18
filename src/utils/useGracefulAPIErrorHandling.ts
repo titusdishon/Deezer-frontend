@@ -1,45 +1,4 @@
 import { AxiosError } from 'axios';
-import {  useLocation, useNavigate } from 'react-router-dom';
-
-/**
- * @description Intercept API errors and redirect to auth if
- * error is unauthorised error
- * @param {AxiosError} error
- */
-export const useRedirectOnUnauthorised = (
-  error: any,
-  path: string,
-  onFailure?: Function,
-) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  if (
-    !path.includes('auth/get-my-detail-after-login') &&
-    error &&
-    (error as AxiosError)?.response?.status === 401
-  ) {
-    const newLocation = {
-      pathname: '/',
-      state: { from: location },
-    };
-    
-    navigate(newLocation)
-    return;
-  }
-  if (error && (error as AxiosError)?.response?.status === 403) {
-    const newLocation = {
-      pathname: '/access-denied',
-      state: { from: location },
-    };
-    navigate(newLocation)
-    return;
-  }
-  onFailure &&
-    onFailure({
-      message: makeErrorMessage(error),
-      statusCode: error.response?.status,
-    });
-};
 
 /**
  * @description Attempt to make a useful error message from the API error

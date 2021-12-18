@@ -15,7 +15,7 @@ const Music = () => {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<Tracks />}/>
+          <Route path="" element={<Tracks />}/>
             <Route path="/playlist/:id" element={<PlayListView />} />
             <Route path="/artist" element={<ArtistView />} />
             <Route path="/artist" element={<ArtistView />} />
