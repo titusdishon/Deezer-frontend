@@ -1,0 +1,6 @@
+[build]
+  command = "./netlify-build.sh"
+  publish = "build"
+
+[[plugins]]
+  package = "./plugins/preinstall-awscli"
