@@ -38,6 +38,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "preinstall":"pip3 install --user awscli",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
